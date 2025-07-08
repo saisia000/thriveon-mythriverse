@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* ThriveOn Light Mode - Airy and emotionally uplifting */
+    --background: 195 12% 95%;  /* #edf3f5 light mode - pure flat color */
+    --foreground: 210 30% 20%;
+    
+    /* Star colors */
+    --star-color: 220 80% 25%;  /* Darker navy blue stars for light mode */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 20%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 20%;
+    
+    --primary: 200 96% 49%;  /* Blue primary */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 41 91% 52%;  /* Amber secondary */
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 200 20% 90%;
+    --muted-foreground: 210 20% 50%;
+    
+    --accent: 41 91% 52%;  /* Amber accent */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 200 20% 80%;
+    --input: 200 20% 85%;
+    --ring: 200 96% 49%;
+    
+    --radius: 1rem;
+    
+    /* ThriveOn blue-amber gradients */
+    --gradient-aurora: linear-gradient(135deg, hsl(200 96% 49%), hsl(41 91% 52%), hsl(200 80% 60%));
+    --gradient-healing: linear-gradient(180deg, hsl(var(--background)), hsl(200 30% 90%));
+    --gradient-mythri: linear-gradient(45deg, hsl(200 96% 49%), hsl(41 91% 52%));
+    --gradient-gentle: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
+    
+    /* Emotion-based gradients */
+    --gradient-joy: linear-gradient(135deg, hsl(45 98% 51%), hsl(35 91% 52%), hsl(25 95% 53%));
+    --gradient-sadness: linear-gradient(135deg, hsl(210 50% 40%), hsl(220 60% 50%), hsl(200 70% 45%));
+    --gradient-anxiety: linear-gradient(135deg, hsl(280 60% 50%), hsl(260 70% 45%), hsl(290 65% 55%));
+    --gradient-calm: linear-gradient(135deg, hsl(180 50% 50%), hsl(160 60% 45%), hsl(140 55% 50%));
+    --gradient-love: linear-gradient(135deg, hsl(330 60% 50%), hsl(340 70% 55%), hsl(350 65% 60%));
+    
+    /* Healing shadows */
+    --shadow-magical: 0 10px 40px hsl(200 96% 49% / 0.2);
+    --shadow-gentle: 0 4px 20px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+    
+    /* Embossed effects */
+    --shadow-embossed: inset 0 1px 0 hsl(0 0% 100% / 0.1), 0 2px 4px hsl(0 0% 0% / 0.1), 0 8px 16px hsl(var(--primary) / 0.1);
+    --shadow-embossed-hover: inset 0 1px 0 hsl(0 0% 100% / 0.2), 0 4px 8px hsl(0 0% 0% / 0.15), 0 12px 24px hsl(var(--primary) / 0.15);
+    --shadow-embossed-deep: inset 0 2px 4px hsl(0 0% 0% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.1), 0 12px 32px hsl(var(--primary) / 0.2);
+    
+    /* Animations */
+    --transition-magical: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-gentle: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* ThriveOn Dark Mode - Emotionally soothing, nighttime safe */
+    --background: 211 79% 7%;   /* #031424 dark mode */
+    --foreground: 200 20% 90%;
+    
+    /* Silver stars for dark mode */
+    --star-color: 0 0% 95%;  /* Brighter silver stars for dark mode */
+    
+    --card: 210 25% 12%;
+    --card-foreground: 200 20% 90%;
+    
+    --popover: 210 25% 12%;
+    --popover-foreground: 200 20% 90%;
+    
+    --primary: 200 86% 59%;  /* Softer blue for dark */
+    --primary-foreground: 210 30% 8%;
+    
+    --secondary: 41 81% 62%;  /* Softer amber for dark */
+    --secondary-foreground: 210 30% 8%;
+    
+    --muted: 210 20% 15%;
+    --muted-foreground: 200 10% 60%;
+    
+    --accent: 41 81% 62%;  /* Amber accent for dark */
+    --accent-foreground: 210 30% 8%;
+    
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 200 20% 90%;
+    
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
+    --ring: 200 86% 59%;
+    
+    /* Dark mode blue-amber gradients - brighter for better visibility */
+    --gradient-aurora: linear-gradient(135deg, hsl(200 90% 65%), hsl(41 85% 68%), hsl(200 75% 55%));
+    --gradient-healing: linear-gradient(180deg, hsl(var(--background)), hsl(210 25% 15%));
+    --gradient-mythri: linear-gradient(45deg, hsl(200 90% 65%), hsl(41 85% 68%));
+    --gradient-gentle: linear-gradient(135deg, hsl(var(--primary) / 0.3), hsl(var(--accent) / 0.3));
+    
+    /* Dark mode emotion-based gradients */
+    --gradient-joy: linear-gradient(135deg, hsl(45 88% 61%), hsl(35 81% 62%), hsl(25 85% 63%));
+    --gradient-sadness: linear-gradient(135deg, hsl(210 60% 50%), hsl(220 70% 60%), hsl(200 80% 55%));
+    --gradient-anxiety: linear-gradient(135deg, hsl(280 70% 60%), hsl(260 80% 55%), hsl(290 75% 65%));
+    --gradient-calm: linear-gradient(135deg, hsl(180 60% 60%), hsl(160 70% 55%), hsl(140 65% 60%));
+    --gradient-love: linear-gradient(135deg, hsl(330 70% 60%), hsl(340 80% 65%), hsl(350 75% 70%));
+    
+    /* Dark healing shadows */
+    --shadow-magical: 0 10px 40px hsl(200 86% 59% / 0.3);
+    --shadow-gentle: 0 4px 20px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.4);
+    
+    /* Dark mode embossed effects */
+    --shadow-embossed: inset 0 1px 0 hsl(0 0% 100% / 0.05), 0 2px 4px hsl(0 0% 0% / 0.3), 0 8px 16px hsl(var(--primary) / 0.2);
+    --shadow-embossed-hover: inset 0 1px 0 hsl(0 0% 100% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.4), 0 12px 24px hsl(var(--primary) / 0.25);
+    --shadow-embossed-deep: inset 0 2px 4px hsl(0 0% 0% / 0.2), 0 4px 8px hsl(0 0% 0% / 0.3), 0 12px 32px hsl(var(--primary) / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Starfield background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsl(var(--star-color)), transparent),
+      radial-gradient(1px 1px at 40px 70px, hsl(var(--star-color)), transparent),
+      radial-gradient(2px 2px at 90px 40px, hsl(var(--star-color)), transparent),
+      radial-gradient(1px 1px at 130px 80px, hsl(var(--star-color)), transparent),
+      radial-gradient(2px 2px at 160px 30px, hsl(var(--star-color)), transparent),
+      radial-gradient(1px 1px at 200px 90px, hsl(var(--star-color)), transparent),
+      radial-gradient(2px 2px at 240px 50px, hsl(var(--star-color)), transparent),
+      radial-gradient(1px 1px at 280px 120px, hsl(var(--star-color)), transparent),
+      radial-gradient(2px 2px at 320px 40px, hsl(var(--star-color)), transparent),
+      radial-gradient(1px 1px at 360px 90px, hsl(var(--star-color)), transparent),
+      radial-gradient(2px 2px at 400px 60px, hsl(var(--star-color)), transparent),
+      radial-gradient(1px 1px at 440px 100px, hsl(var(--star-color)), transparent),
+      radial-gradient(2px 2px at 480px 30px, hsl(var(--star-color)), transparent),
+      radial-gradient(1px 1px at 520px 80px, hsl(var(--star-color)), transparent),
+      radial-gradient(2px 2px at 560px 50px, hsl(var(--star-color)), transparent),
+      radial-gradient(1px 1px at 600px 110px, hsl(var(--star-color)), transparent),
+      radial-gradient(2px 2px at 640px 70px, hsl(var(--star-color)), transparent),
+      radial-gradient(1px 1px at 680px 40px, hsl(var(--star-color)), transparent),
+      radial-gradient(2px 2px at 720px 90px, hsl(var(--star-color)), transparent),
+      radial-gradient(1px 1px at 760px 60px, hsl(var(--star-color)), transparent);
+    background-repeat: repeat;
+    background-size: 800px 150px;
+    animation: star-twinkle 8s ease-in-out infinite alternate;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  /* Enhanced shimmer on hover */
+  body:hover::before {
+    animation: star-shimmer 1.5s ease-in-out infinite alternate;
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  /* Animation keyframes */
+  @keyframes star-twinkle {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  @keyframes star-shimmer {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { 
+      opacity: 1; 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+    }
+    50% { 
+      opacity: 0.8; 
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.8);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animation classes */
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  /* Embossed effect utility classes */
+  .embossed {
+    box-shadow: var(--shadow-embossed);
+  }
+
+  .embossed:hover {
+    box-shadow: var(--shadow-embossed-hover);
+  }
+
+  .embossed-deep {
+    box-shadow: var(--shadow-embossed-deep);
+  }
+
+  .embossed-card {
+    box-shadow: var(--shadow-embossed);
+    transition: var(--transition-gentle);
+  }
+
+  .embossed-card:hover {
+    box-shadow: var(--shadow-embossed-hover);
+  }
+}
